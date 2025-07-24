@@ -10,15 +10,18 @@ cookieslist.forEach(function(car){
         table = content[1];
     };
 });
-table = [...table];
-table.forEach(function(car){
-    if(car == 0){
-        table[table.indexOf(car)] = '';
-    };
-});
-document.querySelectorAll('.cell').forEach(function(car){
-    car.innerHTML = table[Array.from(document.querySelectorAll('.cell')).indexOf(car)];
-});
+if(table !== ''){
+    table = [...table];
+    table.forEach(function(car){
+        if(car == 0){
+            table[table.indexOf(car)] = '';
+        };
+    });
+    document.querySelectorAll('.cell').forEach(function(car){
+        car.innerHTML = table[Array.from(document.querySelectorAll('.cell')).indexOf(car)];
+    });
+};
+
 
 //開く
 let on = 0;
